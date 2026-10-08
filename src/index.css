@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: var(--color-slate-200, #e2e8f0);
+  }
+}
+
+/* Regras de impressão para A4 e Cupom 80mm */
+@media screen {
+  .print-area {
+    display: none !important;
+  }
+}
+
+@media print {
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Oculta toda a interface padrão da web */
+  header, nav, aside, footer, .no-print, button, [role="dialog"]:not(.printable-modal) {
+    display: none !important;
+  }
+
+  /* Exibe exclusivamente a área de impressão ativa */
+  .print-area {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Formato Bobina Térmica 80mm */
+  .print-receipt-80mm {
+    width: 76mm !important;
+    max-width: 76mm !important;
+    margin: 0 auto !important;
+    padding: 2mm 3mm !important;
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace !important;
+    font-size: 10.5px !important;
+    line-height: 1.28 !important;
+    color: #000000 !important;
+  }
+
+  /* Formato A4 / Folha inteira ou meia folha */
+  .print-document-a4 {
+    width: 100% !important;
+    max-width: 210mm !important;
+    margin: 0 auto !important;
+    padding: 12mm 15mm !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    color: #000000 !important;
+  }
+
+  @page {
+    margin: 10mm;
+    size: auto;
+  }
+}

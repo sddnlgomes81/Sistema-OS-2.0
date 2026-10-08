@@ -1,0 +1,6 @@
+{
+  "name": "OS Impressoras",
+  "description": "Gerador enxuto de Ordem de Serviço (O.S.) para assistência técnica de impressoras.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
